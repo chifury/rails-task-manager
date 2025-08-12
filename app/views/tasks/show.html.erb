@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="mt-3 text-decoration-underline"><%= @task[:title].capitalize %></h1>
+  <h2 class="mt-3 text-secondary">Details</h2>
+  <p class="mt-2"><%= @task[:details] %></p>
+  <p><%= @completed %></p>
+  <%= link_to "Back to list", tasks_path, class: "btn btn-secondary" %>
+  <%= link_to "Edit Task", update_task_path, class: "btn btn-primary" %>
+  <%= link_to "Delete", task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Delete #{@task.title}?" }, class: "btn btn-danger" %>
+</div>
